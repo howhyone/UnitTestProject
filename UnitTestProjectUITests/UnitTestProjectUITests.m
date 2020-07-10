@@ -7,19 +7,18 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "ViewController.h"
 @interface UnitTestProjectUITests : XCTestCase
-
+@property (nonatomic, strong) ViewController *vc;
 @end
 
 @implementation UnitTestProjectUITests
 
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-
+//    self.vc = [ViewController new];
     // In UI tests it is usually best to stop immediately when a failure occurs.
     self.continueAfterFailure = NO;
-
+    [[[XCUIApplication alloc] init] launch];
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
 
@@ -41,8 +40,13 @@
         // This measures how long it takes to launch your application.
         [self measureWithMetrics:@[XCTOSSignpostMetric.applicationLaunchMetric] block:^{
             [[[XCUIApplication alloc] init] launch];
-        }];
+                                            }];
     }
+}
+
+- (void)testMainViewBtnClick {
+    
+        [[[XCUIApplication alloc] init].buttons[@"点击"] tap];
 }
 
 @end

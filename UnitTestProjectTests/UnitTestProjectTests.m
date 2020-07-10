@@ -7,7 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "OCMock/OCMock.h"
+#import "ViewController.h"
 @interface UnitTestProjectTests : XCTestCase
 
 @end
